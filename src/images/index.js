@@ -1,0 +1,1 @@
+export {default as LogoCoamo} from './coamo-2021-branco-24-03-22-114827.png';
