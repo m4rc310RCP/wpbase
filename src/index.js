@@ -14,19 +14,19 @@ import React from 'react';
 import ReactDOM from 'react-dom/client'
 import { ApolloProvider } from '@apollo/client'
 
-import { MPanelMain } from './react/containers'
-import {client} from './react/graphql';
+import { client } from './react/graphql';
+import { MPanelMain } from './react/containers';
+import { DashboardProvider, useDash } from './react/context/provider'
 import './style.css';
-
 
 const div = document.createElement('div');
 div.id = "root"
 document.querySelector('body').appendChild(div);
 const root = ReactDOM.createRoot(document.querySelector('#root'));
 root.render(
-    <React.StrictMode>
-        <ApolloProvider client={client}>
-        <MPanelMain />
-        </ApolloProvider>
-    </React.StrictMode>
+    <ApolloProvider client={client}>
+        <DashboardProvider>
+            <MPanelMain />
+        </DashboardProvider>
+    </ApolloProvider>
 );

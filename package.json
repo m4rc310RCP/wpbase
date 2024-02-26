@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "wp": "webpack",
+    "build": "webpack --mode production",
     "dev": "webpack serve --hot"
   },
   "author": "",

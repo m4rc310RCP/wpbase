@@ -10,10 +10,9 @@ if (process.env.NODE_ENV === 'local') {
 	//uri = "http://localhost:8081/graphql";
 }
 
-//uri = 'http://localhost:8081/graphql';
+//uri = 'http://localhost:8080/graphql';
 
 let wsuri = uri.replace('http', 'ws');
-console.log(wsuri);
 
 const httpLink = new HttpLink({
 	uri: { uri },
@@ -23,7 +22,7 @@ const wsLink = new WebSocketLink(
 	new SubscriptionClient(wsuri, {
 		reconnect: true,
 		connectionParams: {
-			Authorization: `Test 270881:mlsilva`,
+			Authorization: `Test test:test`,
 		},
 	})
 );
@@ -31,7 +30,7 @@ const wsLink = new WebSocketLink(
 const authMiddleware = new ApolloLink((operation, forward) => {
 	operation.setContext({
 		headers: {
-			Authorization: `Test 270881:mlsilva`,
+			Authorization: `Test test:test`,
 		},
 	});
 	return forward(operation);
