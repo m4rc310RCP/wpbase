@@ -15,4 +15,4 @@ COPY --from=builder /app/dist .
 COPY --from=builder /app/nginx/nginx.conf /etc/nginx/conf.d/default.conf
 
 ENTRYPOINT ["nginx", "-g", "daemon off;"]
-EXPOSE 8080
+EXPOSE 9000
