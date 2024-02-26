@@ -1,1 +1,1 @@
-export * as m_providers from './provider'
+export * from './app';

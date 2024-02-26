@@ -2,7 +2,6 @@ import { split, HttpLink, ApolloClient, InMemoryCache, concat, ApolloLink } from
 import { getMainDefinition } from '@apollo/client/utilities';
 import { SubscriptionClient } from 'subscriptions-transport-ws';
 import { WebSocketLink } from '@apollo/client/link/ws';
-import { setContext } from '@apollo/client/link/context';
 
 
 let uri = 'https://trade.m4rc310.com.br/graphql';
